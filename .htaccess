@@ -3,28 +3,6 @@ DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /fpd/
-
-# Legacy HTML wrappers -> clean URLs
-RewriteRule ^index\.html$ /fpd/ [R=301,L,NC]
-RewriteRule ^(parti|actualites|programme|mobilisation|contact|article)\.html$ /fpd/$1 [R=301,L,NC]
-RewriteRule ^home\.php$ /fpd/ [R=301,L,NC]
-
-# Legacy PHP public URLs -> clean URLs
-RewriteCond %{THE_REQUEST} \s/+[^\s?]*index\.php(?:[?\s]|$) [NC]
-RewriteRule ^index\.php$ /fpd/ [R=301,L]
-
-RewriteCond %{THE_REQUEST} \s/+[^\s?]*(parti|actualites|programme|mobilisation|contact)\.php(?:[?\s]|$) [NC]
-RewriteRule ^(parti|actualites|programme|mobilisation|contact)\.php$ /fpd/$1 [R=301,L]
-
-RewriteCond %{THE_REQUEST} \s/+[^\s?]*article\.php\?slug=([^&\s]+) [NC]
-RewriteRule ^article\.php$ /fpd/article/%1? [R=301,L,NE]
-RewriteCond %{THE_REQUEST} \s/+[^\s?]*article\.php(?:[?\s]|$) [NC]
-RewriteRule ^article\.php$ /fpd/actualites [R=301,L]
-
-# Canonical /index -> /
-RewriteRule ^index/?$ /fpd/ [R=301,L,NC]
-RewriteRule ^article/?$ /fpd/actualites [R=301,L,NC]
 
 # Stop rewriting existing files/directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
