@@ -4,33 +4,33 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/news.php';
 
 $pageTitle = 'FPD | Accueil';
-$metaDescription = 'Site officiel de la Force Populaire des Democrates : actualites, programme et mobilisation citoyenne.';
+$metaDescription = 'Site officiel de la Force Populaire des Democrates : statuts, programme, actualites et mobilisation.';
 $activePage = 'home';
 $latestPosts = get_latest_posts(3);
 $heroSlides = [
     [
-        'title' => 'ELAN 2026',
-        'subtitle' => 'NOUVEL AN, NOUVEL ELAN',
-        'text' => 'Vision collective, cohesion nationale et mobilisation responsable pour une action politique courageuse.',
+        'title' => 'Identite statutaire',
+        'subtitle' => 'SOCIAL-DEMOCRATIE ET PATRIOTISME RENOVATEUR',
+        'text' => 'Le FPD agit sur base des statuts et du reglement interieur adoptes en mai 2025.',
         'slogan' => 'UNITE - TRAVAIL - DEVELOPPEMENT',
-        'button_label' => "Programme d'action 2026",
+        'button_label' => 'Lire le programme',
         'button_link' => page_url('programme'),
     ],
     [
-        'title' => 'Mobilisation Nationale',
-        'subtitle' => 'ENSEMBLE SUR LE TERRAIN',
-        'text' => 'Le mouvement se renforce dans toutes les provinces avec une organisation de proximite.',
-        'slogan' => 'ACTION - DISCIPLINE - RESULTATS',
-        'button_label' => 'Rejoindre la mobilisation',
-        'button_link' => page_url('mobilisation'),
+        'title' => 'Siege national',
+        'subtitle' => 'LIMETE - KINSHASA',
+        'text' => 'Avenue Tropiques N 551, 7e Rue, Quartier Residentiel. Un centre de coordination pour l action nationale.',
+        'slogan' => 'ORGANISATION - DISCIPLINE - PROXIMITE',
+        'button_label' => 'Decouvrir le parti',
+        'button_link' => page_url('parti'),
     ],
     [
-        'title' => 'Priorite Citoyenne',
-        'subtitle' => 'LE PROGRAMME EN ACTION',
-        'text' => 'Des engagements concrets pour l emploi, l education et la cohesion sociale.',
-        'slogan' => 'PROGRES - STABILITE - DEVELOPPEMENT',
-        'button_label' => 'Voir les actualites',
-        'button_link' => page_url('actualites'),
+        'title' => 'Implantation provinciale',
+        'subtitle' => 'INTERFEDERATIONS ET FEDERATIONS',
+        'text' => 'Le Parti est structure du niveau national jusqu a la cellule pour organiser durablement la mobilisation citoyenne.',
+        'slogan' => 'MOBILISATION - FORMATION - ACTION',
+        'button_label' => 'FPD en province',
+        'button_link' => page_url('mobilisation') . '#fpd-provinces',
     ],
 ];
 
@@ -66,26 +66,40 @@ require __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="row justify-content-center mb-4">
       <div class="col-lg-10 text-center heading-section ftco-animate">
-        <h2 class="mb-2">CAP SUR Ã‰LAN 2026</h2>
-        <p>Deux visuels officiels de campagne mis en avant pour porter le message national.</p>
+        <h2 class="mb-2">Reperes institutionnels</h2>
+        <p>Informations officielles tirees des Statuts amendes et du Reglement d ordre interieur du FPD.</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 ftco-animate">
-        <article class="elan-banner-card mb-4">
-          <img src="<?= e(app_path('images/100x710.png')) ?>" alt="Visuel officiel FPD Ã‰lan 2026 - vision collective tournÃ©e vers l'avenir" class="elan-banner-img" loading="eager">
-        </article>
+      <div class="col-md-4 ftco-animate">
+        <div class="course h-100">
+          <div class="text p-4">
+            <h3>Ideologie</h3>
+            <p>La social-democratie : participation du peuple aux decisions, concurrence loyale et justice sociale.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-12 ftco-animate">
-        <article class="elan-banner-card">
-          <img src="<?= e(app_path('images/150x420.png')) ?>" alt="Visuel officiel FPD Ã‰lan 2026 - programme d'action stratÃ©gique" class="elan-banner-img" loading="lazy">
-        </article>
+      <div class="col-md-4 ftco-animate">
+        <div class="course h-100">
+          <div class="text p-4">
+            <h3>Doctrine</h3>
+            <p>Le patriotisme renovateur : souverainete nationale, reformes progressives et responsabilite publique.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="course h-100">
+          <div class="text p-4">
+            <h3>Rayon d action</h3>
+            <p>Le FPD exerce ses activites sur toute l etendue de la RDC, avec extension possible dans la diaspora.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row mt-4">
       <div class="col-12 text-center ftco-animate">
-        <a href="<?= e(page_url('programme')) ?>" class="btn btn-primary px-4 py-3 mr-2">Voir le programme 2026</a>
-        <a href="<?= e(page_url('actualites')) ?>" class="btn btn-outline-gold px-4 py-3">Suivre la campagne</a>
+        <a href="<?= e(page_url('parti')) ?>" class="btn btn-primary px-4 py-3 mr-2">Base statutaire du parti</a>
+        <a href="<?= e(page_url('mobilisation') . '#fpd-provinces') ?>" class="btn btn-outline-gold px-4 py-3">Voir les provinces representees</a>
       </div>
     </div>
   </div>
@@ -98,8 +112,8 @@ require __DIR__ . '/includes/header.php';
         <div class="media block-6 d-block text-center">
           <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading">UnitÃ©</h3>
-            <p>Rassembler toutes les Ã©nergies citoyennes autour d'une vision nationale commune.</p>
+            <h3 class="heading">Unite nationale</h3>
+            <p>Consolider la cohesion du peuple congolais dans toutes les provinces.</p>
           </div>
         </div>
       </div>
@@ -108,7 +122,7 @@ require __DIR__ . '/includes/header.php';
           <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
           <div class="media-body p-2 mt-3">
             <h3 class="heading">Travail</h3>
-            <p>Promouvoir la discipline, la compÃ©tence et l'efficacitÃ© dans l'action publique.</p>
+            <p>Promouvoir les competences, la discipline et l efficacite dans l action publique.</p>
           </div>
         </div>
       </div>
@@ -116,8 +130,8 @@ require __DIR__ . '/includes/header.php';
         <div class="media block-6 d-block text-center">
           <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-books"></span></div>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading">DÃ©veloppement</h3>
-            <p>Des politiques concrÃ¨tes pour l'emploi, les infrastructures et la cohÃ©sion sociale.</p>
+            <h3 class="heading">Developpement</h3>
+            <p>Des politiques concretes pour l education, l economie et les infrastructures.</p>
           </div>
         </div>
       </div>
@@ -125,8 +139,8 @@ require __DIR__ . '/includes/header.php';
         <div class="media block-6 d-block text-center">
           <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading">Mobilisation</h3>
-            <p>Un rÃ©seau militant organisÃ© pour transformer les idÃ©es en rÃ©sultats mesurables.</p>
+            <h3 class="heading">Bonne gouvernance</h3>
+            <p>Transparence, redevabilite et participation citoyenne a tous les niveaux.</p>
           </div>
         </div>
       </div>
@@ -141,10 +155,10 @@ require __DIR__ . '/includes/header.php';
         <div class="img" style="background-image: url('<?= e(app_path('autorite.jpeg')) ?>');"></div>
       </div>
       <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
-        <h2 class="mb-4">Force Populaire des DÃ©mocrates</h2>
-        <p>Le FPD porte une ambition claire : moderniser la gouvernance, renforcer la justice sociale et accÃ©lÃ©rer le dÃ©veloppement territorial.</p>
-        <p>Notre action repose sur des structures locales actives, une organisation rigoureuse et une Ã©coute permanente des citoyens.</p>
-        <p><a href="<?= e(page_url('parti')) ?>" class="btn btn-primary">DÃ©couvrir le parti</a></p>
+        <h2 class="mb-4">Force Populaire des Democrates</h2>
+        <p>Le FPD prepare la conquete democratique du pouvoir par les elections et l organisation de ses structures de base.</p>
+        <p>Sa vision est de batir un Congo fort et uni, avec une redistribution equilibree des richesses et le respect des droits sociaux et environnementaux.</p>
+        <p><a href="<?= e(page_url('parti')) ?>" class="btn btn-primary">Decouvrir le parti</a></p>
       </div>
     </div>
   </div>
@@ -161,7 +175,7 @@ require __DIR__ . '/includes/header.php';
               <div class="icon"><span class="flaticon-doctor"></span></div>
               <div class="text">
                 <strong class="number" data-number="125000">0</strong>
-                <span>AdhÃ©rents</span>
+                <span>Adherents mobilises</span>
               </div>
             </div>
           </div>
@@ -188,7 +202,7 @@ require __DIR__ . '/includes/header.php';
               <div class="icon"><span class="flaticon-diploma"></span></div>
               <div class="text">
                 <strong class="number" data-number="12">0</strong>
-                <span>Axes programmatiques</span>
+                <span>Axes prioritaires</span>
               </div>
             </div>
           </div>
@@ -202,8 +216,8 @@ require __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
-        <h2 class="mb-4">ActualitÃ©s Ã  la une</h2>
-        <p>Suivez les actions, communiquÃ©s et initiatives du parti en temps rÃ©el.</p>
+        <h2 class="mb-4">Actualites a la une</h2>
+        <p>Suivez les communiques, actions de terrain et initiatives du Parti.</p>
       </div>
     </div>
     <div class="row">
@@ -226,7 +240,7 @@ require __DIR__ . '/includes/header.php';
             </a>
             <div class="text p-4">
               <p class="mb-2"><span class="fpd-pill"><?= e(category_label((string) ($post['category'] ?? 'actualites'))) ?></span></p>
-              <h3 class="heading"><a href="<?= e(article_url((string) ($post['slug'] ?? ''))) ?>"><?= e((string) ($post['title'] ?? 'ActualitÃ©')) ?></a></h3>
+              <h3 class="heading"><a href="<?= e(article_url((string) ($post['slug'] ?? ''))) ?>"><?= e((string) ($post['title'] ?? 'Actualite')) ?></a></h3>
               <p><?= e($excerpt) ?></p>
               <div class="d-flex align-items-center mt-4">
                 <p class="mb-0"><a href="<?= e(article_url((string) ($post['slug'] ?? ''))) ?>" class="btn btn-primary">Lire <span class="ion-ios-arrow-round-forward"></span></a></p>
@@ -237,7 +251,7 @@ require __DIR__ . '/includes/header.php';
       <?php endforeach; ?>
     </div>
     <div class="text-center mt-4">
-      <a href="<?= e(page_url('actualites')) ?>" class="btn btn-primary">Voir toutes les actualitÃ©s</a>
+      <a href="<?= e(page_url('actualites')) ?>" class="btn btn-primary">Voir toutes les actualites</a>
     </div>
   </div>
 </section>
@@ -246,8 +260,8 @@ require __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
-        <h2 class="mb-4">TÃ©moignages militants</h2>
-        <p>La base militante reste le moteur de notre engagement national.</p>
+        <h2 class="mb-4">Temoignages militants</h2>
+        <p>La base militante reste le moteur de l engagement national du FPD.</p>
       </div>
     </div>
     <div class="row ftco-animate justify-content-center">
@@ -258,7 +272,7 @@ require __DIR__ . '/includes/header.php';
               <div class="user-img mr-4" style="background-image: url('<?= e(app_path('secretaire-generale.jpg')) ?>')"></div>
               <div class="text ml-2">
                 <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
-                <p>Le FPD nous donne un cadre clair pour agir concrÃ¨tement sur le terrain.</p>
+                <p>Notre discipline interne renforce la confiance des citoyens dans l action politique.</p>
                 <p class="name">Militante, Kinshasa</p>
                 <span class="position">Section locale</span>
               </div>
@@ -269,7 +283,7 @@ require __DIR__ . '/includes/header.php';
               <div class="user-img mr-4" style="background-image: url('<?= e(app_path('autorite.jpeg')) ?>')"></div>
               <div class="text ml-2">
                 <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
-                <p>La discipline interne et la proximitÃ© citoyenne font notre force collective.</p>
+                <p>Le cadre statutaire du Parti clarifie les responsabilites a tous les niveaux organisationnels.</p>
                 <p class="name">Cadre, Lubumbashi</p>
                 <span class="position">Coordination provinciale</span>
               </div>
@@ -280,7 +294,7 @@ require __DIR__ . '/includes/header.php';
               <div class="user-img mr-4" style="background-image: url('<?= e(app_path('lgo_desing.png')) ?>')"></div>
               <div class="text ml-2">
                 <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
-                <p>Notre slogan n'est pas thÃ©orique : unitÃ©, travail et dÃ©veloppement guident nos actions.</p>
+                <p>Unite, travail et developpement ne sont pas des slogans, mais un cadre d action concret.</p>
                 <p class="name">Jeune militant, Goma</p>
                 <span class="position">Cellule jeunesse</span>
               </div>

@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 $pageTitle = 'Contact | FPD';
-$metaDescription = 'Contact officiel de la Force Populaire des Démocrates.';
+$metaDescription = 'Coordonnees officielles de la Force Populaire des Democrates.';
 $activePage = 'contact';
 
 $sent = false;
@@ -34,12 +34,12 @@ require __DIR__ . '/includes/header.php';
       <div class="col-md-3 d-flex">
         <div class="align-self-stretch box p-4 text-center">
           <h3 class="mb-4">Adresse</h3>
-          <p>Avenue de la Démocratie, Kinshasa</p>
+          <p>Avenue Tropiques N 551, 7e Rue, Quartier Residentiel, Limete, Kinshasa</p>
         </div>
       </div>
       <div class="col-md-3 d-flex">
         <div class="align-self-stretch box p-4 text-center">
-          <h3 class="mb-4">Téléphone</h3>
+          <h3 class="mb-4">Telephone</h3>
           <p><a href="tel:+243000000000">+243 000 000 000</a></p>
         </div>
       </div>
@@ -51,8 +51,8 @@ require __DIR__ . '/includes/header.php';
       </div>
       <div class="col-md-3 d-flex">
         <div class="align-self-stretch box p-4 text-center">
-          <h3 class="mb-4">Slogan</h3>
-          <p class="section-slogan">UNITÉ - TRAVAIL - DÉVELOPPEMENT</p>
+          <h3 class="mb-4">Devise</h3>
+          <p class="section-slogan">UNITE - TRAVAIL - DEVELOPPEMENT</p>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@ require __DIR__ . '/includes/header.php';
       <div class="col-md-6 order-md-last d-flex">
         <form method="post" class="bg-light p-5 contact-form w-100">
           <?php if ($sent): ?>
-            <div class="alert alert-success">Message envoyé. Nous vous répondrons rapidement.</div>
+            <div class="alert alert-success">Message envoye. Le Secretariat executif national vous repondra rapidement.</div>
           <?php endif; ?>
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Votre nom" required>

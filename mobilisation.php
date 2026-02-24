@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 $pageTitle = 'Mobilisation | FPD';
-$metaDescription = 'Adhésion, bénévolat et agenda de mobilisation du FPD.';
+$metaDescription = 'Adhesion, engagement citoyen et implantation provinciale du FPD.';
 $activePage = 'mobilisation';
 
 $success = false;
@@ -11,6 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require __DIR__ . '/includes/header.php';
+
+$representedProvinces = fpd_represented_provinces();
+$provinceNotes = [
+    'kinshasa' => 'Siege national et coordination generale.',
+    'kongo-central' => 'Organisation federale active autour de Matadi.',
+    'kasai-oriental' => 'Relais territorial et mobilisation des sections locales.',
+    'haut-katanga' => 'Animation politique et coordination militante a Lubumbashi.',
+    'nord-kivu' => 'Implantation active avec dynamique jeunesse a Goma.',
+];
 ?>
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('<?= e(app_path('images/bg_5.jpg')) ?>');">
@@ -33,10 +42,10 @@ require __DIR__ . '/includes/header.php';
     <div class="row">
       <div class="col-md-7 ftco-animate">
         <div class="wrapper p-4">
-          <h3>Formulaire d'adhésion</h3>
-          <p>Engagez-vous pour renforcer l'action citoyenne du FPD.</p>
+          <h3>Formulaire d adhesion</h3>
+          <p>L adhesion au FPD se fait par formulaire, puis par l engagement regulier dans les reunions, activites et cotisations du Parti.</p>
           <?php if ($success): ?>
-            <div class="alert alert-success">Merci. Votre demande a été enregistrée. L'équipe vous contactera.</div>
+            <div class="alert alert-success">Merci. Votre demande a ete enregistree. L equipe d implantation vous contactera.</div>
           <?php endif; ?>
           <form method="post">
             <div class="form-group">
@@ -44,71 +53,74 @@ require __DIR__ . '/includes/header.php';
               <input type="text" name="full_name" class="form-control" required>
             </div>
             <div class="form-group">
-              <label>Téléphone</label>
+              <label>Telephone</label>
               <input type="text" name="phone" class="form-control" required>
             </div>
             <div class="form-group">
-              <label>Ville</label>
+              <label>Province</label>
+              <input type="text" name="province" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Ville / Territoire</label>
               <input type="text" name="city" class="form-control" required>
             </div>
             <div class="form-group">
               <label>Motivation</label>
-              <textarea name="message" class="form-control"></textarea>
+              <textarea name="message" class="form-control" rows="5"></textarea>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary py-3 px-5" type="submit">Rejoignez le mouvement</button>
+              <button class="btn btn-primary py-3 px-5" type="submit">Rejoindre le mouvement</button>
             </div>
           </form>
         </div>
       </div>
       <div class="col-md-5 ftco-animate">
+        <div class="wrapper p-4 mb-4">
+          <h3>Repere statutaire</h3>
+          <p>Le Parti vit des cotisations regulieres de ses membres. Les contributions financieres sont tracees et controlees a chaque niveau organisationnel.</p>
+          <p>Les membres elus, mandataires et promus contribuent selon les references internes arretees par les textes du Parti.</p>
+          <p class="section-slogan">DISCIPLINE - TRANSPARENCE - RESULTATS</p>
+        </div>
         <div class="wrapper p-4">
-          <h3>Devenir bénévole</h3>
-          <p>Participez aux campagnes de terrain et à l'organisation locale.</p>
-          <ul>
-            <li>Communication communautaire</li>
-            <li>Logistique événementielle</li>
-            <li>Animation des sections</li>
+          <h3>Equipes de terrain</h3>
+          <ul class="mb-0">
+            <li>Cellules de quartier et sections communales</li>
+            <li>Federations territoriales et urbaines</li>
+            <li>Interfederations provinciales</li>
+            <li>Ligue des femmes et ligue des jeunes</li>
           </ul>
-          <p class="section-slogan">AGISSONS ENSEMBLE</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ftco-section">
+<section class="ftco-section" id="fpd-provinces">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-2">
-      <div class="col-md-8 text-center heading-section ftco-animate">
-        <h2 class="mb-4">Calendrier des événements</h2>
+      <div class="col-md-9 text-center heading-section ftco-animate">
+        <h2 class="mb-4">FPD en province</h2>
+        <p>Provinces actuellement representees sur nos structures actives.</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 ftco-animate">
-        <div class="course">
-          <div class="text p-4">
-            <h3>18 février 2026</h3>
-            <p>Rencontre citoyenne régionale - Dialogue sur les priorités locales.</p>
+      <?php foreach ($representedProvinces as $province): ?>
+        <?php
+        $slug = (string) ($province['slug'] ?? 'province');
+        $name = (string) ($province['name'] ?? 'Province');
+        $city = (string) ($province['city'] ?? '');
+        $note = (string) ($provinceNotes[$slug] ?? 'Structure locale en cours de consolidation.');
+        ?>
+        <div class="col-md-6 col-lg-4 ftco-animate province-anchor" id="<?= e('province-' . $slug) ?>">
+          <div class="course mb-4">
+            <div class="text p-4">
+              <h3><?= e($name) ?></h3>
+              <p><strong>Ville de reference:</strong> <?= e($city) ?></p>
+              <p><?= e($note) ?></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 ftco-animate">
-        <div class="course">
-          <div class="text p-4">
-            <h3>23 février 2026</h3>
-            <p>Atelier jeunesse et leadership - Formation des nouveaux cadres.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 ftco-animate">
-        <div class="course">
-          <div class="text p-4">
-            <h3>02 mars 2026</h3>
-            <p>Forum national des sections locales - Planification trimestrielle.</p>
-          </div>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>

@@ -7,21 +7,22 @@ declare(strict_types=1);
       <div class="col-md-6 col-lg-4">
         <div class="ftco-footer-widget mb-5">
           <h2 class="ftco-heading-2">FPD</h2>
-          <p>Force Populaire des Démocrates</p>
-          <p class="footer-slogan">UNITÉ - TRAVAIL - DÉVELOPPEMENT</p>
+          <p>Force Populaire des Democrates</p>
+          <p class="footer-slogan">UNITE - TRAVAIL - DEVELOPPEMENT</p>
           <ul class="list-unstyled mt-3 footer-links">
             <li><a href="<?= e(page_url('home')) ?>">Accueil</a></li>
-            <li><a href="<?= e(page_url('actualites')) ?>">Actualités</a></li>
+            <li><a href="<?= e(page_url('actualites')) ?>">Actualites</a></li>
             <li><a href="<?= e(page_url('mobilisation')) ?>">Mobilisation</a></li>
+            <li><a href="<?= e(page_url('mobilisation') . '#fpd-provinces') ?>">FPD en province</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="ftco-footer-widget mb-5">
-          <h2 class="ftco-heading-2">Siège National</h2>
+          <h2 class="ftco-heading-2">Siege National</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">Avenue de la Démocratie, Kinshasa</span></li>
+              <li><span class="icon icon-map-marker"></span><span class="text">Avenue Tropiques N 551, 7e Rue, Q. Residentiel, Limete, Kinshasa</span></li>
               <li><a href="tel:+243000000000"><span class="icon icon-phone"></span><span class="text">+243 000 000 000</span></a></li>
               <li><a href="mailto:contact@fpd.cd"><span class="icon icon-envelope"></span><span class="text">contact@fpd.cd</span></a></li>
             </ul>
@@ -31,14 +32,14 @@ declare(strict_types=1);
       <div class="col-md-6 col-lg-4">
         <div class="ftco-footer-widget mb-5">
           <h2 class="ftco-heading-2">Action</h2>
-          <p>Rejoignez notre dynamique citoyenne et participez aux actions de terrain.</p>
+          <p>Le FPD mobilise ses structures pour organiser les membres, former les cadres et preparer les echeances electorales.</p>
           <a href="<?= e(page_url('mobilisation')) ?>" class="btn btn-primary px-3 py-2">Agissons ensemble</a>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
-        <p class="mb-0">&copy; <?= date('Y') ?> FPD - Tous droits réservés.</p>
+        <p class="mb-0">&copy; <?= date('Y') ?> FPD - Tous droits reserves.</p>
       </div>
     </div>
   </div>

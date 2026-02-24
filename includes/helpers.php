@@ -241,3 +241,19 @@ function str_contains_ci(string $haystack, string $needle): bool
 {
     return strpos(str_lower($haystack), str_lower($needle)) !== false;
 }
+
+/**
+ * Provinces where the party is currently represented on the site.
+ *
+ * @return array<int, array{slug:string,name:string,city:string}>
+ */
+function fpd_represented_provinces(): array
+{
+    return [
+        ['slug' => 'kinshasa', 'name' => 'Kinshasa', 'city' => 'Kinshasa'],
+        ['slug' => 'kongo-central', 'name' => 'Kongo Central', 'city' => 'Matadi'],
+        ['slug' => 'kasai-oriental', 'name' => 'Kasai Oriental', 'city' => 'Mbuji-Mayi'],
+        ['slug' => 'haut-katanga', 'name' => 'Haut-Katanga', 'city' => 'Lubumbashi'],
+        ['slug' => 'nord-kivu', 'name' => 'Nord-Kivu', 'city' => 'Goma'],
+    ];
+}

@@ -158,6 +158,32 @@ a:hover {
   background: rgba(103, 61, 230, 0.08);
 }
 
+.ftco-navbar-light .navbar-nav > .dropdown.show > .nav-link {
+  color: var(--hostinger-primary);
+  background: rgba(103, 61, 230, 0.1);
+}
+
+.ftco-navbar-light .dropdown-menu {
+  border: 1px solid #e6e9fb;
+  border-radius: 12px;
+  box-shadow: 0 14px 26px rgba(47, 28, 106, 0.12);
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.ftco-navbar-light .dropdown-item {
+  border-radius: 8px;
+  color: #506083;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+}
+
+.ftco-navbar-light .dropdown-item:hover,
+.ftco-navbar-light .dropdown-item:focus {
+  background: rgba(103, 61, 230, 0.1);
+  color: var(--hostinger-primary);
+}
+
 .ftco-navbar-light .navbar-toggler {
   border: 1px solid #d7dcf7;
   border-radius: 10px;
@@ -200,6 +226,13 @@ a:hover {
   .ftco-navbar-light .btn-outline-gold {
     margin-top: 0.55rem;
     width: 100%;
+  }
+
+  .ftco-navbar-light .dropdown-menu {
+    box-shadow: none;
+    margin-top: 0;
+    border: 0;
+    padding: 0.2rem 0 0.35rem 0.7rem;
   }
 }
 
@@ -465,6 +498,10 @@ input[type="submit"]:focus-visible {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.province-anchor {
+  scroll-margin-top: 110px;
 }
 
 .ftco-section,

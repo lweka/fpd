@@ -5,8 +5,9 @@ require_once __DIR__ . '/helpers.php';
 
 $pageTitle = $pageTitle ?? 'FPD';
 $activePage = $activePage ?? '';
-$metaDescription = $metaDescription ?? 'Site officiel de la Force Populaire des Démocrates';
+$metaDescription = $metaDescription ?? 'Site officiel de la Force Populaire des Democrates';
 $bodyClass = isset($bodyClass) ? trim((string) $bodyClass) : '';
+$representedProvinces = fpd_represented_provinces();
 
 if (!headers_sent()) {
     header('Content-Type: text/html; charset=UTF-8');
@@ -46,7 +47,7 @@ if (!headers_sent()) {
           <a class="navbar-brand d-flex align-items-center" href="<?= e(page_url('home')) ?>">
             <img src="<?= e(app_path('logo2.png')) ?>" alt="Logo FPD" class="brand-logo mr-2">
             <span class="brand-text-wrap">
-              FPD <span>Force Populaire des Démocrates</span>
+              FPD <span>Force Populaire des Democrates</span>
             </span>
           </a>
         </div>
@@ -62,7 +63,7 @@ if (!headers_sent()) {
             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-3">
               <div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
               <div class="text">
-                <span>Téléphone</span>
+                <span>Telephone</span>
                 <span>+243 000 000 000</span>
               </div>
             </div>
@@ -88,8 +89,20 @@ if (!headers_sent()) {
         <ul class="navbar-nav mr-auto">
           <li class="nav-item <?= e(active_class($activePage, 'home')) ?>"><a href="<?= e(page_url('home')) ?>" class="nav-link pl-0">Accueil</a></li>
           <li class="nav-item <?= e(active_class($activePage, 'parti')) ?>"><a href="<?= e(page_url('parti')) ?>" class="nav-link">Le Parti</a></li>
-          <li class="nav-item <?= e(active_class($activePage, 'actualites')) ?>"><a href="<?= e(page_url('actualites')) ?>" class="nav-link">Actualités</a></li>
+          <li class="nav-item <?= e(active_class($activePage, 'actualites')) ?>"><a href="<?= e(page_url('actualites')) ?>" class="nav-link">Actualites</a></li>
           <li class="nav-item <?= e(active_class($activePage, 'programme')) ?>"><a href="<?= e(page_url('programme')) ?>" class="nav-link">Programme</a></li>
+          <li class="nav-item dropdown <?= e(active_class($activePage, 'mobilisation')) ?>">
+            <a class="nav-link dropdown-toggle" href="<?= e(page_url('mobilisation')) ?>" id="fpdProvinceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              FPD en province
+            </a>
+            <div class="dropdown-menu" aria-labelledby="fpdProvinceDropdown">
+              <?php foreach ($representedProvinces as $province): ?>
+                <a class="dropdown-item" href="<?= e(page_url('mobilisation') . '#province-' . ($province['slug'] ?? '')) ?>">
+                  <?= e((string) ($province['name'] ?? 'Province')) ?>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          </li>
           <li class="nav-item <?= e(active_class($activePage, 'mobilisation')) ?>"><a href="<?= e(page_url('mobilisation')) ?>" class="nav-link">Mobilisation</a></li>
           <li class="nav-item <?= e(active_class($activePage, 'contact')) ?>"><a href="<?= e(page_url('contact')) ?>" class="nav-link">Contact</a></li>
         </ul>
